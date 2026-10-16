@@ -100,19 +100,5 @@ https://github.com/sifafarhin/javascript-internship
 👩‍💻 Author
 Sifa Farhin
 JavaScript Internship Project
-📌 Project Status
-- [x] Assignment 1
-- [x] Assignment 2
-- [x] Assignment 3
-- [x] Assignment 4
-- [x] Assignment 5
-- [x] Assignment 6
-- [x] Product Management Dashboard
-- [x] Dashboard styling
-- [x] Search and filtering
-- [x] Add and delete products
-- [x] Dynamic statistics
-- [x] Animations and hover effects
-- [x] GitHub repository
-- [ ] Netlify deployment
+
 ```
