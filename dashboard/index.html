@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Product Management Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         SIDEBAR
+         ========================================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                PD
+            </div>
+
+            <div>
+
+                <h2>ProductHub</h2>
+
+                <span>Management System</span>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#" class="nav-item active">
+
+                <span class="nav-icon">▦</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="#products" class="nav-item">
+
+                <span class="nav-icon">◈</span>
+
+                Products
+
+            </a>
+
+
+            <a href="#add-product" class="nav-item">
+
+                <span class="nav-icon">＋</span>
+
+                Add Product
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <p>JavaScript Internship</p>
+
+            <small>Dashboard Project</small>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+         ========================================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="welcome-text">
+                    Welcome back 👋
+                </p>
+
+                <h1>
+                    Product Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    S
+                </div>
+
+                <div>
+
+                    <strong>
+                        Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================================
+             STATISTICS
+             ========================================= -->
+
+        <section class="stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon products-icon">
+                    📦
+                </div>
+
+                <div class="stat-content">
+
+                    <p>Total Products</p>
+
+                    <h2 id="totalProducts">
+                        0
+                    </h2>
+
+                    <span class="stat-description">
+                        Products in inventory
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon value-icon">
+                    💰
+                </div>
+
+                <div class="stat-content">
+
+                    <p>Inventory Value</p>
+
+                    <h2 id="totalValue">
+                        $0.00
+                    </h2>
+
+                    <span class="stat-description">
+                        Total product value
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon category-icon">
+                    🏷️
+                </div>
+
+                <div class="stat-content">
+
+                    <p>Categories</p>
+
+                    <h2 id="totalCategories">
+                        0
+                    </h2>
+
+                    <span class="stat-description">
+                        Product categories
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon average-icon">
+                    📊
+                </div>
+
+                <div class="stat-content">
+
+                    <p>Average Price</p>
+
+                    <h2 id="averagePrice">
+                        $0.00
+                    </h2>
+
+                    <span class="stat-description">
+                        Average product price
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             SEARCH / FILTER
+             ========================================= -->
+
+        <section class="toolbar">
+
+            <div class="search-wrapper">
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+
+            </div>
+
+
+            <div class="filter-wrapper">
+
+                <span>
+                    Filter:
+                </span>
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             ADD PRODUCT
+             ========================================= -->
+
+        <section
+            class="add-product"
+            id="add-product"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        INVENTORY
+                    </span>
+
+                    <h2>
+                        Add New Product
+                    </h2>
+
+                    <p>
+                        Add a new item to your product inventory.
+                    </p>
+
+                </div>
+
+                <div class="heading-icon">
+                    ＋
+                </div>
+
+            </div>
+
+
+            <form id="productForm">
+
+
+                <div class="input-group">
+
+                    <label for="productName">
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="e.g. Headphones"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label for="productPrice">
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        placeholder="e.g. 99.99"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label for="productCategory">
+                        Category
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productCategory"
+                        placeholder="e.g. Electronics"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="add-button"
+                >
+
+                    <span>＋</span>
+
+                    Add Product
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =========================================
+             PRODUCTS SECTION
+             ========================================= -->
+
+        <section
+            class="products-section"
+            id="products"
+        >
+
+            <div class="products-header">
+
+                <div>
+
+                    <span class="section-label">
+                        INVENTORY
+                    </span>
+
+                    <h2>
+                        Your Products
+                    </h2>
+
+                </div>
+
+
+                <div class="product-count">
+
+                    <span id="visibleCount">
+                        0
+                    </span>
+
+                    products shown
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="productList"
+                class="product-grid"
+            >
+
+                <!-- JavaScript will insert products here -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             FOOTER
+             ========================================= -->
+
+        <footer>
+
+            <p>
+                © 2026 ProductHub Dashboard
+            </p>
+
+            <p>
+                Built with HTML • CSS • JavaScript
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
