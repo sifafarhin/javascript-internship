@@ -97,8 +97,6 @@ Contains the dashboard functionality, including product management, searching, f
 ```
 GitHub Repository
 https://github.com/sifafarhin/javascript-internship
-Live Dashboard
-The live dashboard link will be added after deployment.
 👩‍💻 Author
 Sifa Farhin
 JavaScript Internship Project
